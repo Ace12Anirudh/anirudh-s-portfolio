@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anirudh Trivedi • Cloud & DevOps Engineer</title>
+    <meta name="description" content="Portfolio of Anirudh Trivedi — Cloud & DevOps Engineer specialized in AWS, GCP, Docker, Terraform, and CI/CD." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <header class="nav">
+      <a class="brand" href="#hero" aria-label="Home">
+        <svg class="logo-ace" width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="8" y="6" width="48" height="52" rx="6" ry="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <path d="M32 20c-6 7-12 12-12 16a8 8 0 0 0 16 0c0-4-6-9-12-16 3 0 5-2 8-2s5 2 8 2c-6 7-12 12-12 16" fill="currentColor"/>
+          <text x="14" y="18" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor">A</text>
+          <text x="46" y="50" font-family="JetBrains Mono, monospace" font-size="10" fill="currentColor" transform="rotate(180,46,50)">A</text>
+        </svg>
+        <span class="brand-text">Portfolio</span>
+      </a>
+      <nav id="site-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#tools">Tools</a>
+        <a href="#certs">Certs</a>
+        <a href="#internships">Internships</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-controls">
+        <button id="nav-toggle" class="btn btn-ghost" aria-expanded="false" aria-controls="site-nav" title="Menu">
+          <i class="fa-solid fa-ellipsis" aria-hidden="true"></i><span class="btn-label">Menu</span>
+        </button>
+        <button id="audio-toggle" class="btn btn-ghost" aria-pressed="false" title="Toggle background sound">
+          <i class="fa-solid fa-volume-xmark" aria-hidden="true"></i><span class="btn-label" id="audio-label">🔊</span>
+        </button>
+        <button id="theme-toggle" class="btn btn-ghost" aria-pressed="false" title="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i><span class="btn-label" id="theme-label">Light</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero" class="section hero">
+        <div class="hero__content reveal">
+          <h1>Hi, I’m <span class="accent"><br/>Anirudh Trivedi</span> <span class="wave">👋</span></h1>
+          <h2 class="typing" data-text="Cloud & DevOps Engineer | Building Scalable Solutions on AWS &amp; GCP "></h2>
+          <div class="cta">
+            <a class="btn btn-primary" href="assets/ANIRUDH TRIVEDI Resume Damask pdf.pdf" target="_blank" rel="noopener">
+              <span>📄 Download Resume</span>
+            </a>
+            <a class="btn btn-secondary" href="#contact"><span>📬 Contact Me</span></a>
+          </div>
+        </div>
+        <div class="hero__media reveal">
+          <div class="avatar-glow">
+            <img src="assets/images/profile.png" alt="Anirudh Trivedi photo" onerror="this.src='assets/images/profile.svg';" />
+          </div>
+        </div>
+        <div class="hero__bg fx-clouds" aria-hidden="true"></div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section about">
+        <div class="container">
+          <div class="panel reveal">
+            <h3 class="section-title">About Me</h3>
+            <div class="about-grid">
+              <div class="about-text">
+                <p>
+                  Results-driven Cloud &amp; DevOps enthusiast with hands-on experience across AWS and GCP. I build reliable delivery pipelines, containerize workloads, and codify infrastructure for repeatable environments.
+                </p>
+                <p>
+                  I care about automation, observability, and developer experience—turning manual runbooks into scripts and scalable systems.
+                </p>
+                <ul class="badges">
+                  <li>Cloud</li>
+                  <li>Containers</li>
+                  <li>IaC</li>
+                  <li>CI/CD</li>
+                  <li>Monitoring</li>
+                  <li>Scripting</li>
+                </ul>
+                <a class="btn btn-outline" href="https://www.linkedin.com/in/anirudh-trivedi-4414b9244/" target="_blank" rel="noopener">View LinkedIn</a>
+              </div>
+              <div class="about-kpis">
+                <div class="kpi"><span class="num" data-counter="projects">0</span><span class="label">Projects</span></div>
+                <div class="kpi"><span class="num" data-counter="tools">0</span><span class="label">Tools</span></div>
+                <div class="kpi"><span class="num" data-counter="certs">0</span><span class="label">Certifications</span></div>
+                <div class="kpi"><span class="num" data-counter="internships">0</span><span class="label">Internships</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h3 class="section-title reveal">Projects</h3>
+          <div class="panel">
+          <div class="cards">
+            <article class="card reveal">
+              <h4>Random Quote Generator – Powered by AWS</h4>
+              <p>A full-stack, serverless web application built on AWS that displays random quotes and allows users to submit their own. This project demonstrates a modern, scalable, and cost-effective cloud architecture.</p>
+              <div class="meta"><span>AWS Lambda • API Gateway • DynamoDB • Amazon S3 • AWS IAM</span></div>
+              <div class="links">
+                <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Random_quote_generator-powered-by-AWS" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_aws-serverless-lambda-activity-7387554969815650304-TCAR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+              </div>
+            </article>
+            <article class="card reveal">
+              <h4>Serverless Data Processing Pipeline on AWS</h4>
+              <p>This project deploys a static website from a private S3 bucket using CloudFront for global access.
+               An AWS Lambda function automatically triggers CloudFront invalidations on S3 object changes.</p>
+              <div class="meta"><span>AWS • Step Functions • S3 • Glue</span></div>
+              <div class="links">
+                <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Secure-Static-Website-deployment-in-AWS-S3-Cloudfront-Lambda-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_aws-cloudfront-s3-activity-7382842429269274624-61wf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+              </div>
+            </article>
+            <article class="card reveal">
+              <h4>Cloud Native Student Performance Prediction</h4>
+              <p>The Cloud Native Student Performance Prediction project predicts a student’s performance score using features like gender, education, and marks. It’s built with Python, uses ML models (Linear Regression & Decision Tree), and is deployed via Docker and GCP Cloud Run.</p>
+              <div class="meta"><span>Docker • Kubernetes • Python</span></div>
+              <div class="links">
+                <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Cloud-Native-SPP" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+              </div>
+            </article>
+            <article class="card reveal">
+              <h4>Dynamic Chatbot</h4>
+              <p>Interactive chatbot with intent classification and context-aware responses.</p>
+              <div class="meta"><span>Python • NLP • Flask</span></div>
+              <div class="links">
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+              </div>
+            </article>
+          </div></div>
+        </div>
+        <div class="section-bg fx-grid" aria-hidden="true"></div>
+      </section>
+
+      <!-- Tools & Technologies -->
+      <section id="tools" class="section tools">
+        <div class="container">
+          <div class="panel reveal">
+            <h3 class="section-title">Tools &amp; Technologies</h3>
+            <p class="section-sub">Daily drivers across cloud, containers, IaC, CI/CD, and scripting.</p>
+            <ul class="logo-grid">
+              <li title="AWS"><i class="fa-brands fa-aws"></i><span>AWS</span></li>
+              <li title="GCP"><i class="fa-brands fa-google"></i><span>GCP</span></li>
+              <li title="Azure"><i class="fa-brands fa-microsoft"></i><span>Azure</span></li>
+              <li title="Docker"><i class="fa-brands fa-docker"></i><span>Docker</span></li>
+              <li title="Kubernetes"><i class="fa-solid fa-cubes"></i><span>Kubernetes</span></li>
+              <li title="Terraform"><i class="fa-solid fa-code-branch"></i><span>Terraform</span></li>
+              <li title="Jenkins"><i class="fa-solid fa-gears"></i><span>Jenkins</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></li>
+              <li title="Linux"><i class="fa-brands fa-linux"></i><span>Linux</span></li>
+              <li title="Python"><i class="fa-brands fa-python"></i><span>Python</span></li>
+              <li title="SQL"><i class="fa-solid fa-database"></i><span>SQL</span></li>
+              <li title="Bash"><i class="fa-solid fa-terminal"></i><span>Bash</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certs" class="section certs">
+        <div class="container">
+          <h3 class="section-title reveal">Certifications</h3>
+          <div class="panel">
+          <div class="cards">
+            <article class="card clickable reveal" data-link="assets/oracle devops certificate.pdf">
+              <h4>Oracle Cloud infrastructure Devop Professional</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/Oci genai certificate.pdf">
+              <h4>Oracle Cloud infrastructure Generative AI Professional</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/Coursera NA2UE7828I9K.pdf">
+              <h4>Google Data Analytics Professional Certificate</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/Certificate Ai skills passport.pdf">
+              <h4>AI Skill Passport</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/azure fundamentals.pdf">
+              <h4>Microsoft Azure Fundamentals</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/cognitive class , machine learning with python.pdf">
+              <h4>Machine Learning with Python</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/Coursera XZ9W6W44TXAP linux.pdf">
+              <h4>Linux for Devops (Coursera)</h4>
+              <p>Click to view certificate</p>
+            </article>
+            <article class="card clickable reveal" data-link="assets/Coursera CAMRNDU7TVA4 python.pdf">
+              <h4>Python (Dec 2022)</h4>
+              <p>Click to view certificate</p>
+            </article>
+          </div></div>
+        </div>
+      </section>
+
+      <!-- Internships -->
+      <section id="internships" class="section internships">
+        <div class="container">
+          <h3 class="section-title reveal">Internships</h3>
+          <div class="timeline reveal">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <article class="card clickable reveal" data-link="assets/Anirudh Trivedi MTE.pdf">
+                <h4>MedTourEassy (Data Analyst Trainee)</h4>
+                <p>Developed a "Predict Blood Donations" ML project from conception to documentation under the guidance of a project mentor.
+                  Recognized for strong analytical aptitude and reliability in delivering project components.</p>
+                </article>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <article class="card clickable reveal" data-link="assets/Anirudh Trivedi Codsoft ML.pdf">
+                <h4>Codsoft (ML Intern)</h4>
+                <p>Developed and implemented machine learning models for projects including "Movie Genre Classification" and "Credit Card Fraud Detection."Managed project timelines and deliverables, ensuring timely completion of all technical solutions.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section contact">
+        <div class="container reveal">
+          <h3 class="section-title">Let’s Connect 🤝</h3>
+          <div class="contact-grid">
+            <form id="contact-form" class="contact-form">
+              <label>
+                <span>Name</span>
+                <input type="text" name="user_name" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="user_email" required />
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary">Send</button>
+              <p id="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <ul class="contact-cards">
+              <li>
+                <a href="mailto:anirudhtrivedi3014@gmail.com" class="contact-card">
+                  <i class="fa-solid fa-envelope"></i>
+                  <div><h5>Email</h5><span>anirudhtrivedi3014@gmail.com</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Ace12Anirudh" class="contact-card" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-github"></i>
+                  <div><h5>GitHub</h5><span>github.com/Ace12Anirudh</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/anirudh-trivedi-4414b9244/" class="contact-card" target="_blank" rel="noopener">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <div><h5>LinkedIn</h5><span>linkedin.com/in/anirudh-trivedi</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/@anirudhtrivedi3014" class="contact-card" target="_blank" rel="noopener">
+                  <i class="fa-solid fa-blog"></i>
+                  <div><h5>Blog</h5><span>Anirudhtrivedi3014</span></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Anirudh Trivedi 💙 </p>
+      </div>
+    </footer>
+
+    <button id="to-top" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i><span class="label">⇮</span></button>
+
+    <audio id="hover-sound" src="assets/sounds/ui-sounds-pack-5-19-359747.mp3" preload="auto"></audio>
+    <audio id="bg-music" src="assets/sounds/Krishna Flute Ringtone Download Mp3 Pagalworld - MobCup.Com.Co.mp3" preload="auto" loop></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/emailjs.config.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
