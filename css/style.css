@@ -1,4 +1,9 @@
 
+/* Ensure buttons inside cards remain clickable above decorative layers */
+.links{position:relative; z-index:1; pointer-events:auto}
+.btn-chip{position:relative; z-index:1; cursor:pointer}
+
+
 /* Mobile dropdown overrides placed after base styles to win the cascade */
 @media (max-width: 768px){
   .nav nav{display:none !important; position:absolute; left:8px; right:8px; top:calc(100% + 8px); flex-direction:column; align-items:stretch; gap:8px; background:var(--panel-bg); border:1px solid var(--card-border); border-radius:14px; padding:10px; box-shadow:0 18px 40px rgba(0,0,0,.28); overflow:hidden}
@@ -12,11 +17,11 @@
 @media (max-width: 768px){
   #nav-toggle{display:inline-flex}
   .nav{position:fixed; left:50%; transform:translateX(-50%); width:calc(100% - 28px)}
-  .nav nav{position:absolute; left:8px; right:8px; top:calc(100% + 8px); display:none; flex-direction:column; align-items:stretch; gap:8px; background:var(--panel-bg); border:1px solid var(--card-border); border-radius:14px; padding:10px; box-shadow:0 18px 40px rgba(0,0,0,.28); overflow:hidden}
+  .nav nav{position:absolute; left:8px; right:8px; top:calc(100% + 8px); display:none; flex-direction:column; align-items:stretch; gap:8px; background:var(--menu-bg); border:1px solid var(--card-border); border-radius:14px; padding:10px; box-shadow:0 22px 48px rgba(0,0,0,.35); overflow:hidden; backdrop-filter:blur(10px)}
   .nav.menu-open nav{display:flex; animation:menuIn .25s ease both}
-  .nav nav a{display:block; padding:10px 12px; border-radius:10px; text-decoration:none; color:var(--text); background:transparent}
+  .nav nav a{display:block; padding:12px 14px; border-radius:10px; text-decoration:none; color:var(--text); background:transparent}
   .nav nav a:hover{background:transparent; box-shadow:0 0 0 1px var(--card-border) inset}
-  .nav nav a:active{opacity:.9}
+  .nav nav a:active{opacity:.95}
 }
 
 
@@ -80,9 +85,9 @@
 
 /* Fancy navbar buttons */
 .nav .btn-ghost{display:inline-flex; align-items:center; gap:8px; background:var(--card-bg); border:1px solid var(--card-border); box-shadow:0 8px 22px rgba(0,0,0,.15); transition:.25s transform,.25s box-shadow,.25s background,.25s color,.15s opacity}
-.nav .btn-ghost i{transition:transform .35s ease}
+.nav .btn-ghost i{transition:transform .35s ease; display:inline-block; color:var(--text)}
 .nav .btn-ghost .btn-label{font-weight:700; font-size:12px}
-@media (max-width: 768px){ .nav .btn-ghost .btn-label{display:none} }
+@media (max-width: 768px){ .nav .btn-ghost .btn-label{display:none} .nav .btn-ghost i{display:inline-block !important; color:var(--text); font-size:16px} }
 .nav .btn-ghost:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,0) inset; background:linear-gradient(135deg,var(--pri),var(--sec)); color:#041020}
 .nav .btn-ghost:active{transform:translateY(1px) scale(.98); background:transparent; opacity:.85}
 #theme-toggle[aria-pressed="true"] i{transform:rotate(180deg)}
@@ -189,12 +194,14 @@
   --sec:#5872ff;  /* indigo */
   --acc:#69f0ae;  /* mint */
   --glow:0 0 24px rgba(88,114,255,.45);
-  --card-bg:rgba(255,255,255,.04);
-  --card-border:rgba(255,255,255,.08);
-  --panel-bg:rgba(255,255,255,.03);
+  --card-bg:rgba(255,255,255,.08);
+  --card-border:rgba(255,255,255,.12);
+  --panel-bg:rgba(255,255,255,.10);
+  --section-bg-color: rgba(12,18,34,.66);
   --nav-bg:linear-gradient(180deg, rgba(10,15,31,.7), rgba(10,15,31,.35));
   --nav-bg-strong:linear-gradient(180deg, rgba(10,15,31,.92), rgba(10,15,31,.75));
   --content-w: 1000px;
+  --menu-bg: rgba(10,15,31,.94);
 }
 
 /* Light Mode */
@@ -207,11 +214,13 @@
   --sec:#3b82f6;  /* blue */
   --acc:#10b981;  /* emerald */
   --glow:0 0 24px rgba(59,130,246,.25);
-  --card-bg:rgba(255,255,255,.8);
-  --card-border:rgba(0,0,0,.1);
-  --panel-bg:rgba(255,255,255,.6);
+  --card-bg:rgba(255,255,255,.9);
+  --card-border:rgba(0,0,0,.12);
+  --panel-bg:rgba(255,255,255,.78);
   --nav-bg:linear-gradient(180deg, rgba(248,250,252,.9), rgba(248,250,252,.7));
-  --nav-bg-strong:linear-gradient(180deg, rgba(255,255,255,.98), rgba(255,255,255,.9));
+  --menu-bg: rgba(255,255,255,.96);
+  --section-bg-color: rgba(255,255,255,.82);
+  --menu-bg: rgba(255,255,255,.96);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -279,7 +288,7 @@ body{
 /* Cards */
 .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px}
 .card{position:relative; background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px; padding:20px; box-shadow:0 10px 20px rgba(0,0,0,.25); transform:translateY(6px); transition:.35s transform, .35s box-shadow}
-.card::before{content:""; position:absolute; inset:0; border-radius:16px; padding:1px; background:conic-gradient(from 180deg at 50% 50%, var(--pri), var(--sec), var(--pri)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity:.0; transition:.35s opacity}
+.card::before{content:""; position:absolute; inset:0; border-radius:16px; padding:1px; background:conic-gradient(from 180deg at 50% 50%, var(--pri), var(--sec), var(--pri)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity:.0; transition:.35s opacity; pointer-events:none}
 .card:hover::before{opacity:.35}
 .card:hover{transform:translateY(0); box-shadow:0 24px 50px rgba(88,114,255,.25)}
 .card.clickable{cursor:pointer}
@@ -310,7 +319,7 @@ body{
 
 /* Back to top button */
 .to-top{position:fixed; right:22px; bottom:22px; min-width:52px; height:52px; padding:0 14px; border-radius:999px; border:1px solid rgba(255,255,255,.18); display:flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--sec),var(--pri)); color:#041020; box-shadow:0 12px 30px rgba(88,114,255,.35); transform:translateY(20px); opacity:0; pointer-events:none; transition:.25s transform,.25s opacity}
-.to-top i{font-size:20px}
+.to-top i{font-size:20px; display:inline-block}
 .to-top .label{font-weight:700; font-size:25px}
 .to-top.show{opacity:1; transform:none; pointer-events:auto; animation:floatUp2 .4s ease both}
 @keyframes floatUp2{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
@@ -320,7 +329,7 @@ body{
 @media (max-width: 480px){ .to-top .label{display:none} }
 
 /* Background FX helpers */
-.section .section-bg{position:absolute; top:16px; bottom:16px; left:50%; transform:translateX(-50%); width:min(calc(var(--content-w) - 40px), calc(100% - 120px)); z-index:-1; opacity:.25; border-radius:16px}
+.section .section-bg{position:absolute; top:16px; bottom:16px; left:50%; transform:translateX(-50%); width:min(calc(var(--content-w) - 40px), calc(100% - 120px)); z-index:-1; opacity:1; border-radius:16px; background-color:var(--section-bg-color); border:1px solid var(--card-border); box-shadow:0 20px 60px rgba(0,0,0,.28)}
 .fx-grid{background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 40px 40px}
 /* Soft separators to match reduced section padding */
 .section::before{content:""; position:absolute; left:0; right:0; top:-30px; height:30px; background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,0)); opacity:.2; pointer-events:none}

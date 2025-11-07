@@ -101,7 +101,7 @@ btn.addEventListener('click', ()=>{
   if(btn && bar){
     const icon = btn.querySelector('i');
     const label = btn.querySelector('.btn-label');
-    const setIcon = (open)=>{ if(icon){ icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-ellipsis'; } if(label){ label.textContent = open ? '㊂' : '㊂'; } };
+    const setIcon = (open)=>{ if(icon){ icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'; } if(label){ label.textContent = open ? 'Close' : 'Menu'; } };
     btn.addEventListener('click', (e)=>{
       e.stopPropagation();
       const open = bar.classList.toggle('menu-open');
