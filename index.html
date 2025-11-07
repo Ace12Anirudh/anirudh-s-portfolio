@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/emailjs.config.js"></script> //
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+      emailjs.init("PUBLIC_KEY"); // Replace with your actual Public Key from EmailJS
+      })();
+    </script>
+    <script>
+      const cfg = window.EMAILJS_CONFIG;
+  window.addEventListener('load', function() {
+    emailjs.send(cfg.SERVICE_ID, cfg.DOWNLOAD_ID, {
+      event: 'Page Visit',
+      page_url: window.location.href,
+      time: new Date().toLocaleString(),
+      browser: navigator.userAgent
+    });
+  });
+</script>
+
   </head>
   <body>
     <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -54,9 +74,24 @@
           <h1>Hi, I’m <span class="accent"><br/>Anirudh Trivedi</span> <span class="wave">👋</span></h1>
           <h2 class="typing" data-text="Cloud & DevOps Engineer | Building Scalable Solutions on AWS &amp; GCP "></h2>
           <div class="cta">
-            <a class="btn btn-primary" href="assets/ANIRUDH TRIVEDI Resume Damask pdf.pdf" target="_blank" rel="noopener">
-              <span>📄 Download Resume</span>
-            </a>
+            <a class="btn btn-primary"
+   href="assets/ANIRUDH TRIVEDI Resume Damask pdf.pdf"
+   target="_blank"
+   rel="noopener"
+   onclick="
+     emailjs.send(cfg.SERVICE_ID, cfg.DOWNLOAD_ID, {
+       event: 'Resume Download',
+       page_url: window.location.href,
+       time: new Date().toLocaleString(),
+       browser: navigator.userAgent
+     }).then(() => {
+       console.log('✅ Notification sent!');
+     }).catch((err) => {
+       console.error('❌ Email failed:', err);
+     });
+   ">
+  📄 Download Resume
+</a>
             <a class="btn btn-secondary" href="#contact"><span>📬 Contact Me</span></a>
           </div>
         </div>

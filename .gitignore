@@ -7,5 +7,5 @@ node_modules/
 .dist/
 .build/
 .env
-assets/.pdf
-.config.js
+assets/*.pdf
+emailjs.config.js
