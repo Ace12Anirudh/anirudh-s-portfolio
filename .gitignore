@@ -8,4 +8,4 @@ node_modules/
 .build/
 .env
 assets/*.pdf
-emailjs.config.js
+js/emailjs.config.js
