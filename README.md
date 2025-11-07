@@ -1,3 +1,2 @@
 # Anirudh Trivedi — Portfolio
 
-

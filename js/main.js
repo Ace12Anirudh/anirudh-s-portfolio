@@ -173,23 +173,36 @@ btn.addEventListener('click', ()=>{
     e.preventDefault();
     const status = $('#form-status');
     status.textContent = 'Sending...';
-    const name = form.user_name.value;
-    const email = form.user_email.value;
-    const message = form.message.value;
+    const name = form.user_name.value?.trim();
+    const email = form.user_email.value?.trim();
+    const message = form.message.value?.trim();
     try{
+      // Prefer EmailJS if configured; send multiple aliases so common templates work
       if(window.emailjs && window.EMAILJS_CONFIG && EMAILJS_CONFIG.SERVICE_ID && EMAILJS_CONFIG.TEMPLATE_ID){
-        await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, { user_name:name, user_email:email, message });
+        const payload = {
+          user_name: name,
+          user_email: email,
+          message,
+          from_name: name,
+          from_email: email,
+          reply_to: email,
+          replyto: email
+        };
+        await emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, payload);
         status.textContent = 'Sent! I\'ll get back to you soon.';
         form.reset();
         return;
       }
       // Fallback to FormSubmit if EmailJS is not configured
       const fd = new FormData();
+      // include both our names and the generic aliases
       fd.append('name', name);
       fd.append('email', email);
       fd.append('_replyto', email);
+      fd.append('user_name', name);
+      fd.append('user_email', email);
       fd.append('message', message);
-      fd.append('_subject','New portfolio contact');
+      fd.append('_subject', `New portfolio contact from ${name || 'visitor'}`);
       fd.append('_captcha','false');
       fd.append('_template','table');
       const res = await fetch('https://formsubmit.co/ajax/anirudhtrivedi3014@gmail.com', {

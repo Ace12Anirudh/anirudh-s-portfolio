@@ -1,4 +1,58 @@
 
+/* Override: make section titles solid blue like card headings */
+#projects .section-title,
+#certs .section-title,
+#internships .section-title,
+#contact .section-title{
+  background:none !important;
+  -webkit-background-clip:initial !important; background-clip:initial !important;
+  color:var(--sec) !important;
+  animation:fadeUp .7s ease both !important; /* keep entry, drop shimmer */
+}
+
+
+/* Section title animations for Projects, Certifications, Internships, Contact */
+@keyframes titleShimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
+@keyframes titleUnderline{from{width:0}to{width:72px}}
+#projects .section-title,
+#certs .section-title,
+#internships .section-title,
+#contact .section-title{
+  position:relative;
+  background:linear-gradient(90deg,var(--pri),var(--sec),var(--pri));
+  background-size:200% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:titleShimmer 10s linear infinite, fadeUp .7s ease both;
+}
+/* Light mode: subtle brighten without changing colors */
+[data-theme="light"] #projects .section-title,
+[data-theme="light"] #certs .section-title,
+[data-theme="light"] #internships .section-title,
+[data-theme="light"] #contact .section-title{
+  text-shadow:0 0 10px rgba(59,130,246,.45);
+}
+/* Decorative box behind the titles */
+#projects .section-title,
+#certs .section-title,
+#internships .section-title,
+#contact .section-title{display:inline-block; padding:8px 14px; border-radius:12px}
+#projects .section-title::before,
+#certs .section-title::before,
+#internships .section-title::before,
+#contact .section-title::before{
+  content:""; position:absolute; inset:-6px -10px; border-radius:14px; background:var(--panel-bg); border:1px solid var(--card-border); box-shadow:0 12px 28px rgba(0,0,0,.25); z-index:-1;
+}
+#projects .section-title::after,
+#certs .section-title::after,
+#internships .section-title::after,
+#contact .section-title::after{
+  content:""; position:absolute; left:14px; bottom:-8px; height:3px; width:72px; border-radius:3px;
+  background:linear-gradient(90deg,var(--pri),var(--sec));
+  box-shadow:0 0 18px rgba(62,199,224,.35);
+  animation:titleUnderline .7s ease .1s both;
+}
+
+
 /* Force nav background/light mode override */
 [data-theme="light"] .nav{ background: #ffffff !important; border-color: rgba(0,0,0,.12) !important; box-shadow:0 8px 30px rgba(0,0,0,.12) }
 
