@@ -26,13 +26,17 @@ const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 /* Theme toggle */
 (function theme(){
   const btn = $('#theme-toggle'); if(!btn) return;
+  const icon = btn.querySelector('.icon');
+  const Icons = {
+    sun: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm10 10h2v-3h-2v3zm9-10v-2h-3v2h3zm-3.95 7.95l1.41 1.41 1.8-1.79-1.41-1.41-1.8 1.79zM13 1h-2v3h2V1zm-7.66 3.05L3.95 5.46l1.79 1.8 1.41-1.41-1.8-1.8zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.74 2a9 9 0 108.95 10.74A7 7 0 0112.74 2z"/></svg>'
+  };
   const getPreferred = ()=> localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   const apply = (t)=>{
     document.documentElement.setAttribute('data-theme', t);
     localStorage.setItem('theme', t);
-    const i = btn.querySelector('i');
     const label = document.getElementById('theme-label');
-    if(i){ i.className = t==='light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'; }
+    if(icon){ icon.innerHTML = t==='light' ? Icons.moon : Icons.sun; }
     if(label){ label.textContent = t==='light' ? 'Light' : 'Dark'; }
     btn.setAttribute('aria-pressed', t==='light');
   };
@@ -99,9 +103,13 @@ btn.addEventListener('click', ()=>{
   const bar = document.querySelector('.nav');
   const btn = $('#nav-toggle');
   if(btn && bar){
-    const icon = btn.querySelector('i');
+    const iconWrap = btn.querySelector('.icon');
     const label = btn.querySelector('.btn-label');
-    const setIcon = (open)=>{ if(icon){ icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'; } if(label){ label.textContent = open ? 'Close' : 'Menu'; } };
+    const Icons = {
+      menu: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v2H4V7zm0 4h16v2H4v-2zm0 4h16v2H4v-2z"/></svg>',
+      close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.29 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3z"/></svg>'
+    };
+    const setIcon = (open)=>{ if(iconWrap){ iconWrap.innerHTML = open ? Icons.close : Icons.menu; } if(label){ label.textContent = open ? 'Close' : 'Menu'; } };
     btn.addEventListener('click', (e)=>{
       e.stopPropagation();
       const open = bar.classList.toggle('menu-open');
@@ -246,6 +254,12 @@ btn.addEventListener('click', ()=>{
   });
 
   if(toggle){
+    const iconWrap = toggle.querySelector('.icon');
+    const Icons = {
+      on: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a3.5 3.5 0 00-2.5-3.35v6.7a3.5 3.5 0 002.5-3.35zM14 3.23v2.06a7 7 0 010 13.42v2.06c5.05-1.01 8.56-5.99 7.55-11.04A9 9 0 0014 3.23z"/></svg>',
+      off: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12a3.5 3.5 0 00-2.5-3.35v6.7A3.5 3.5 0 0016.5 12zM7 10H3v4h4l5 5V5L7 10zM14 3.23v2.06a7 7 0 010 13.42v2.06c5.05-1.01 8.56-5.99 7.55-11.04A9 9 0 0014 3.23z"/></svg>'
+    };
+    const setIcon = (on)=>{ if(iconWrap){ iconWrap.innerHTML = on ? Icons.on : Icons.off; } const label = document.getElementById('audio-label'); if(label){ label.textContent = on ? 'Sound On' : 'Sound Off'; }};
     setIcon(false);
     toggle.addEventListener('click', async ()=>{
       if(!audioOn){

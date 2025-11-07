@@ -1,4 +1,16 @@
 
+/* Force nav background/light mode override */
+[data-theme="light"] .nav{ background: #ffffff !important; border-color: rgba(0,0,0,.12) !important; box-shadow:0 8px 30px rgba(0,0,0,.12) }
+
+
+/* Ensure navbar text/icons adapt in light mode */
+[data-theme="light"] .nav .brand,
+[data-theme="light"] .nav nav a,
+[data-theme="light"] .nav .btn-ghost,
+[data-theme="light"] .nav .btn-ghost .icon,
+[data-theme="light"] .nav .btn-ghost .icon svg{ color: var(--text) !important; fill: currentColor }
+
+
 /* Ensure buttons inside cards remain clickable above decorative layers */
 .links{position:relative; z-index:1; pointer-events:auto}
 .btn-chip{position:relative; z-index:1; cursor:pointer}
@@ -36,7 +48,7 @@
   .panel{max-width:720px; padding:16px 12px}
   .about-kpis{grid-template-columns:repeat(2,1fr)}
   .section{padding:100px 18px; scroll-margin-top:96px}
-  .section .section-bg{top:5px; bottom:15px; width:calc(100% - 36px)}
+  .section .section-bg{top:12px; bottom:12px; width:calc(100% - 36px)}
   .logo-grid{width:100%; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
   .logo-grid li{padding:12px; width:100%}
   .logo-grid i{font-size:24px}
@@ -85,9 +97,10 @@
 
 /* Fancy navbar buttons */
 .nav .btn-ghost{display:inline-flex; align-items:center; gap:8px; background:var(--card-bg); border:1px solid var(--card-border); box-shadow:0 8px 22px rgba(0,0,0,.15); transition:.25s transform,.25s box-shadow,.25s background,.25s color,.15s opacity}
-.nav .btn-ghost i{transition:transform .35s ease; display:inline-block; color:var(--text)}
+.nav .btn-ghost .icon{display:inline-flex; width:18px; height:18px}
+.nav .btn-ghost .icon svg{width:18px; height:18px; fill:currentColor; display:block}
 .nav .btn-ghost .btn-label{font-weight:700; font-size:12px}
-@media (max-width: 768px){ .nav .btn-ghost .btn-label{display:none} .nav .btn-ghost i{display:inline-block !important; color:var(--text); font-size:16px} }
+@media (max-width: 768px){ .nav .btn-ghost .btn-label{display:none} .nav .btn-ghost .icon{display:inline-flex} }
 .nav .btn-ghost:hover{transform:translateY(-2px); box-shadow:0 16px 40px rgba(0,0,0,.25),0 0 0 1px rgba(0,0,0,0) inset; background:linear-gradient(135deg,var(--pri),var(--sec)); color:#041020}
 .nav .btn-ghost:active{transform:translateY(1px) scale(.98); background:transparent; opacity:.85}
 #theme-toggle[aria-pressed="true"] i{transform:rotate(180deg)}
@@ -252,10 +265,11 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 .nav nav{display:flex; align-items:center; gap:24px; justify-content:center; margin:0 16px; flex:1}
-.nav .nav-controls{display:flex; align-items:center; gap:10px}
- .nav .brand{color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.5px; padding:6px 10px; border:1px solid var(--card-border); border-radius:8px; box-shadow:var(--glow)}
-.nav nav a{color:var(--muted); margin:0 10px; text-decoration:none; position:relative}
-.nav nav a:hover{color:var(--text)}
+.nav .nav-controls{display:flex; align-items:center; gap:0px}
+.nav .brand{color:var(--text); text-decoration:none; font-weight:800; letter-spacing:.5px; padding:6px 10px; border:1px solid var(--card-border); border-radius:8px; box-shadow:var(--glow)}
+[data-theme="light"] .nav .brand{color:var(--text)}
+.nav nav a{color:var(--text); opacity:.85; margin:0 10px; text-decoration:none; position:relative}
+.nav nav a:hover{color:var(--text); opacity:1}
 .nav .btn{margin-left:12px}
 
 /* Buttons */
@@ -319,12 +333,13 @@ body{
 
 /* Back to top button */
 .to-top{position:fixed; right:22px; bottom:22px; min-width:52px; height:52px; padding:0 14px; border-radius:999px; border:1px solid rgba(255,255,255,.18); display:flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--sec),var(--pri)); color:#041020; box-shadow:0 12px 30px rgba(88,114,255,.35); transform:translateY(20px); opacity:0; pointer-events:none; transition:.25s transform,.25s opacity}
-.to-top i{font-size:20px; display:inline-block}
-.to-top .label{font-weight:700; font-size:25px}
+.to-top .icon{display:inline-flex; width:20px; height:20px}
+.to-top .icon svg{width:20px; height:20px; fill:currentColor; display:block}
+.to-top .label{font-weight:700; font-size:12px}
 .to-top.show{opacity:1; transform:none; pointer-events:auto; animation:floatUp2 .4s ease both}
 @keyframes floatUp2{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
 .to-top:hover{transform:translateY(-3px) scale(1.06)}
-.to-top.scrolling i{animation:arrowUp 800ms ease-in-out infinite}
+.to-top.scrolling .icon{animation:arrowUp 800ms ease-in-out infinite}
 @keyframes arrowUp{0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
 @media (max-width: 480px){ .to-top .label{display:none} }
 
@@ -353,6 +368,6 @@ body{
 }
 @media (max-width: 640px){
   .cards{grid-template-columns:1fr}
-  .logo-grid{grid-template-columns:repeat(2,1fr)}
+  .logo-grid{grid-template-columns:repeat(3,1fr)}
   .contact-form{grid-template-columns:1fr}
 }
