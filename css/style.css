@@ -427,3 +427,443 @@ body{
   .logo-grid{grid-template-columns:repeat(3,1fr)}
   .contact-form{grid-template-columns:1fr}
 }
+/* --- NEW STYLES FOR VISUAL UPGRADE --- */
+
+/* 1. UPDATED ABOUT SECTION (Profile + Skills) */
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-profile-img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  filter: grayscale(20%);
+  transition: .3s all;
+}
+
+.about-profile-img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.skill-bars {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--pri), var(--sec));
+  width: 0; /* JS will animate this */
+  border-radius: 10px;
+  transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 2. UPDATED PROJECT CARDS (Image Top / Text Bottom) */
+.project-card {
+  padding: 0 !important; /* Override default card padding */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Placeholder for when you don't have images yet */
+.project-thumb-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(62,199,224,0.1), rgba(88,114,255,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--pri);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.project-content {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. FEATURED WALKTHROUGHS (Video Style) */
+.walkthrough-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+}
+
+.video-card {
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden;
+  group: pointer;
+}
+
+.video-thumb-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  overflow: hidden;
+}
+
+.video-thumb-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: .3s opacity;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: .3s all;
+}
+
+.video-card:hover .play-button {
+  background: var(--pri);
+  border-color: var(--pri);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-details {
+  padding: 18px;
+}
+
+/* 4. RECOGNITIONS (Badges) */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.badge-card {
+  text-align: center;
+  padding: 30px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  transition: .3s transform;
+}
+
+.badge-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(62,199,224,0.3));
+  transition: .3s filter;
+}
+
+.badge-card:hover .badge-img {
+  filter: drop-shadow(0 0 25px rgba(62,199,224,0.6));
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 960px) {
+  .about-wrapper { grid-template-columns: 1fr; text-align: center; }
+  .about-profile-img { max-width: 300px; margin: 0 auto; }
+  .walkthrough-grid { grid-template-columns: 1fr; }
+}
+
+/* --- HERO V2 STYLES (Reference Style) --- */
+
+.hero-v2 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 40px; /* Top padding for navbar */
+  overflow: visible;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Text slightly wider */
+  align-items: center;
+  gap: 40px;
+}
+
+/* Typography Left Side */
+.hero-greeting {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--pri); /* Your Teal Color */
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-name {
+  font-size: clamp(4rem, 8vw, 6.5rem); /* Responsive Huge Text */
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 0 15px 0;
+  color: #fff;
+}
+
+.hero-name .text-highlight {
+  color: var(--pri); /* Matches your theme (Teal) instead of Yellow */
+}
+
+/* Subtext / Typing */
+.hero-roles {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 20px;
+  min-height: 1.5em;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  opacity: 0.85;
+}
+
+/* Pill Buttons (Like Reference) */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-pill-primary {
+  background: var(--pri);
+  color: #000;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s all;
+  box-shadow: 0 10px 25px rgba(62,199,224,0.3);
+}
+
+.btn-pill-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(62,199,224,0.5);
+}
+
+.btn-pill-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s all;
+}
+
+.btn-pill-outline:hover {
+  border-color: var(--pri);
+  color: var(--pri);
+}
+
+/* --- IMAGE & ANIMATION --- */
+
+.hero-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px; /* Adjust based on image height */
+}
+
+/* The subtle blob glow behind */
+.hero-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(62,199,224,0.25) 0%, rgba(0,0,0,0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.hero-character-img {
+  max-height: 100%;
+  width: auto;
+  max-width: 100%;
+  /* This drop shadow creates the "cutout" pop effect */
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
+  
+  /* The Animation */
+  animation: characterFloat 6s ease-in-out infinite;
+}
+
+@keyframes characterFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 960px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-image-container {
+    order: -1; /* Image on top for mobile */
+    height: 350px;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-description {
+    margin: 0 auto 30px;
+  }
+  
+  .hero-name {
+    font-size: 3.5rem;
+  }
+}
+
+/* --- PROJECT FILTER STYLES --- */
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.filter-btn i {
+  font-size: 1.2rem;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+}
+
+/* The Active State (The white underline) */
+.filter-btn.active {
+  color: var(--text);
+}
+
+.filter-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -11px; /* Aligns with the border-bottom of container */
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--pri); /* Your Teal Color */
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 -2px 10px rgba(62,199,224,0.5);
+  animation: slideWidth 0.3s ease;
+}
+
+@keyframes slideWidth {
+  from { width: 0; left: 50%; }
+  to { width: 100%; left: 0; }
+}
+
+/* Filter Animation Logic */
+.project-card {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.project-card.hide {
+  display: none; /* Hides element completely */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .project-filters {
+    gap: 10px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+  }
+  .filter-btn.active::after {
+    bottom: 0;
+  }
+}

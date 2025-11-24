@@ -77,7 +77,7 @@
 
     <main>
       <!-- Hero -->
-      <section id="hero" class="section hero">
+      <!-- <section id="hero" class="section hero">
         <div class="hero__content reveal">
           <h1>Hi, I’m <span class="accent"><br/>Anirudh Trivedi</span> <span class="wave">👋</span></h1>
           <h2 class="typing" data-text="Cloud & DevOps Engineer | Building Scalable Solutions on AWS &amp; GCP "></h2>
@@ -109,10 +109,55 @@
           </div>
         </div>
         <div class="hero__bg fx-clouds" aria-hidden="true"></div>
-      </section>
+      </section> -->
+      <!-- HERO SECTION V2 -->
+<section id="hero" class="section hero-v2">
+  <div class="hero-container">
+    
+    <!-- Left: Text Content -->
+    <div class="hero-text-content reveal">
+      <span class="hero-greeting">HELLO!</span>
+      <h1 class="hero-name">I'm <span class="text-highlight">Anirudh</span></h1>
+      
+      <div class="hero-roles">
+        <span class="typing-text"></span>
+      </div>
+
+      <p class="hero-description">
+        Cloud & DevOps Engineer specializing in AWS, GCP, and building scalable automation pipelines.
+      </p>
+
+      <div class="hero-buttons">
+        <!-- Kept your Resume Logic -->
+        <a class="btn btn-pill-primary"
+           href="assets/ANIRUDH TRIVEDI Resume Damask pdf.pdf"
+           target="_blank"
+           rel="noopener"
+           onclick="emailjs.send(cfg.SERVICE_ID, cfg.DOWNLOAD_ID, {event: 'Resume Download', page_url: window.location.href});">
+           <i class="fa-solid fa-file-arrow-down"></i> Resume
+        </a>
+        
+        <a class="btn btn-pill-outline" href="https://www.linkedin.com/in/anirudh-trivedi-4414b9244/" target="_blank">
+           <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Animated Character Image -->
+    <div class="hero-image-container reveal">
+      <div class="hero-blob"></div>
+      <!-- IMPORTANT: Use a transparent PNG here for best results -->
+      <img src="assets/images/my-profile.png" alt="Anirudh Trivedi" class="hero-character-img" />
+    </div>
+
+  </div>
+  
+  <!-- Background Elements -->
+  <div class="hero__bg fx-clouds" aria-hidden="true"></div>
+</section>
 
       <!-- About -->
-      <section id="about" class="section about">
+      <!-- <section id="about" class="section about">
         <div class="container">
           <div class="panel reveal">
             <h3 class="section-title">About Me</h3>
@@ -143,10 +188,52 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
+      <section id="about" class="section about">
+  <div class="container">
+    <div class="panel reveal">
+      <h3 class="section-title">About Me</h3>
+      <div class="about-wrapper">
+        <!-- Left: Image -->
+        <div class="about-image">
+          <!-- Replace src with your actual photo path -->
+          <img src="assets/images/profile.png" alt="Anirudh Trivedi" class="about-profile-img" onerror="this.style.display='none'">
+        </div>
+        
+        <!-- Right: Content & Skills -->
+        <div class="about-details">
+          <p>
+            An accomplished Cloud & DevOps Engineer with a passion for building robust, scalable infrastructure. 
+            I specialize in AWS and GCP environments, automating workflows with CI/CD, and ensuring system reliability through observability.
+            My proactive approach to security and monitoring minimizes risks and enhances overall system performance.
+          </p>
+          
+          <div class="skill-bars">
+            <div class="skill-item">
+              <label><span>DevOps & Cloud (AWS/GCP)</span> <span>95%</span></label>
+              <div class="progress-track"><div class="progress-fill" style="width: 0" data-width="95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <label><span>CI/CD & Automation</span> <span>90%</span></label>
+              <div class="progress-track"><div class="progress-fill" style="width: 0" data-width="90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <label><span>Docker & Kubernetes</span> <span>85%</span></label>
+              <div class="progress-track"><div class="progress-fill" style="width: 0" data-width="85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <label><span>Python & Scripting</span> <span>80%</span></label>
+              <div class="progress-track"><div class="progress-fill" style="width: 0" data-width="80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Projects -->
-      <section id="projects" class="section projects">
+      <!-- <section id="projects" class="section projects">
         <div class="container">
           <h3 class="section-title reveal">Projects</h3>
           <div class="panel">
@@ -194,7 +281,133 @@
             </article>
           </div></div>
         </div>
-      </section>
+      </section> -->
+      <section id="projects" class="section projects">
+  <div class="container">
+    <h3 class="section-title reveal">Projects</h3>
+    
+    <!-- 1. NEW FILTER BAR -->
+    <div class="project-filters reveal">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fa-solid fa-layer-group"></i> All
+      </button>
+      <button class="filter-btn" data-filter="aws">
+        <i class="fa-brands fa-aws" style="color: #FF9900;"></i> AWS
+      </button>
+      <button class="filter-btn" data-filter="gcp">
+        <i class="fa-brands fa-google" style="color: #4285F4;"></i> GCP
+      </button>
+      <button class="filter-btn" data-filter="devops">
+        <i class="fa-solid fa-gears" style="color: #69f0ae;"></i> DevOps
+      </button>
+      <button class="filter-btn" data-filter="python">
+        <i class="fa-brands fa-python" style="color: #FFD43B;"></i> Python/ML
+      </button>
+    </div>
+
+    <!-- 2. PROJECT CARDS WITH DATA-CATEGORY -->
+    <div class="cards project-grid">
+      
+      <!-- Project 1 -->
+      <article class="card project-card reveal" data-category="aws serverless">
+        <img src="assets/images/random-q-g.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-aws"></i></div>
+        <div class="project-content">
+          <h4>Random Quote Generator</h4>
+          <p>A full-stack, serverless web application built on AWS demonstrating modern cloud architecture.</p>
+          <div class="meta"><span>AWS Lambda • DynamoDB</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Random_quote_generator-powered-by-AWS" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_aws-serverless-lambda-activity-7387554969815650304-TCAR?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="https://medium.com/@anirudhtrivedi3014/from-zero-to-deployed-how-i-built-a-full-stack-serverless-app-on-aws-to-stand-out-2f3c251ea5f1" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card project-card reveal" data-category="aws devops">
+        <img src="assets/images/serverless.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-solid fa-server"></i></div>
+        <div class="project-content">
+          <h4>Serverless Data Pipeline</h4>
+          <p>Automated static website deployment using S3, CloudFront, and Lambda for invalidations.</p>
+          <div class="meta"><span>AWS • S3 • CloudFront</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Secure-Static-Website-deployment-in-AWS-S3-Cloudfront-Lambda-" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_aws-cloudfront-s3-activity-7382842429269274624-61wf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card project-card reveal" data-category="gcp python docker">
+        <img src="assets/images/cloud-native.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-docker"></i></div>
+        <div class="project-content">
+          <h4>Cloud Native Performance ML</h4>
+          <p>ML prediction model containerized with Docker and deployed via GCP Cloud Run.</p>
+          <div class="meta"><span>GCP • Docker • Kubernetes</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Cloud-Native-SPP" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+       <!-- Project 4 -->
+      <article class="card project-card reveal" data-category="python">
+        <img src="assets/images/chatbot.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-content">
+          <h4>Dynamic Chatbot</h4>
+          <p>Interactive chatbot with intent classification and context-aware responses.</p>
+          <div class="meta"><span>Python • NLP • Flask</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="#" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+       <!-- Featured Project Walkthroughs -->
+<section id="walkthroughs" class="section">
+  <div class="container">
+    <h3 class="section-title reveal">Featured Walkthroughs 🎬</h3>
+    <div class="walkthrough-grid">
+      
+      <!-- Video Card 1 -->
+      <div class="card video-card reveal">
+        <div class="video-thumb-container">
+          <!-- Link to Loom/YouTube or use an image -->
+          <img src="assets/images/random quote.jpg" alt="Context Engine Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
+          <a href="https://drive.google.com/file/d/1yhFei5JuEICvNKJaxUI2BwSPV9JEHqLV/view?usp=drive_link" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
+        </div>
+        <div class="video-details">
+          <h4>Random_quote_generator-powered-by-AWS</h4>
+          <p class="section-sub">An AWS powered random quote generator.</p>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="card video-card reveal">
+        <div class="video-thumb-container">
+          <img src="assets/images/cloudfront-s3-lambda.png" alt="Automation Framework Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
+          <a href="https://drive.google.com/file/d/1nL7A4Tl0v8RQool5sw5e2fJ-ci7sZ59R/view?usp=drive_link" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
+        </div>
+        <div class="video-details">
+          <h4>Serverless Data Pipeline</h4>
+          <p class="section-sub">A serverless data pipeline using AWS CloudFront, S3, and Lambda.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <!-- Tools & Technologies -->
       <section id="tools" class="section tools">
@@ -261,6 +474,7 @@
           </div></div>
         </div>
       </section>
+
 
       <!-- Internships -->
       <section id="internships" class="section internships">
