@@ -124,13 +124,13 @@
       </div>
 
       <p class="hero-description">
-        Cloud & DevOps Engineer specializing in AWS, GCP, and building scalable automation pipelines.
+        Cloud & DevOps Engineer specializing in AWS, GCP, Azure, and building scalable automation pipelines.
       </p>
 
       <div class="hero-buttons">
         <!-- Kept your Resume Logic -->
         <a class="btn btn-pill-primary"
-           href="assets/ANIRUDH TRIVEDI Resume Damask pdf.pdf"
+           href="assets/ANIRUDH TRIVEDI Resume phtoto-Updated pdf_compressed.pdf"
            target="_blank"
            rel="noopener"
            onclick="emailjs.send(cfg.SERVICE_ID, cfg.DOWNLOAD_ID, {event: 'Resume Download', page_url: window.location.href});">
@@ -307,8 +307,56 @@
 
     <!-- 2. PROJECT CARDS WITH DATA-CATEGORY -->
     <div class="cards project-grid">
-      
+
       <!-- Project 1 -->
+      <article class="card project-card reveal" data-category="aws serverless">
+        <img src="assets/images/automated-data-flow.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-aws"></i></div>
+        <div class="project-content">
+          <h4>Automated Data Flow Pipeline</h4>
+          <p>An automated, serverless AWS pipeline that converts raw CSVs to Parquet via Glue and generates daily business reports using Athena and Lambda.</p>
+          <div class="meta"><span>AWS • Terraform • Python • Github Actios • AWS Lambda • AWS Glue • Amazon Athena • S3 • EventBridge</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/data-pipeline-project.git" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_aws-cloudcomputing-devops-ugcPost-7427025086110515200-SR4q?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="https://medium.com/@anirudhtrivedi3014/building-a-fault-tolerant-serverless-data-pipeline-on-aws-with-terraform-cc355a275d17" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card project-card reveal" data-category="aws serverless">
+        <img src="assets/images/mern-deploy-thumbnail.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-aws"></i></div>
+        <div class="project-content">
+          <h4>Automated Full Stack MERN Application DevSecOps Deployment</h4>
+          <p>A production-grade implementation of a Three-Tier MERN Application (MongoDB, Express, React, Node.js) deployed on AWS Elastic Kubernetes Service (EKS).</p>
+          <div class="meta"><span>AWS • Terraform • Kubernetes • Docker • Jenkins • ArgoCD • Grafana • Devops</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/three-tier-mernapp-deploy.git" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="https://www.linkedin.com/posts/anirudh-trivedi-4414b9244_mernstack-aws-eks-ugcPost-7424524478321156096-ANv9?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyWKjEBvvdb1enUc2zJQpzJCvwemGXBp5M" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="https://medium.com/@anirudhtrivedi3014/building-a-production-grade-devsecops-pipeline-deploying-a-3-tier-mern-stack-on-aws-eks-265264c9b0cf" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card project-card reveal" data-category="aws serverless">
+        <img src="assets/images/googleproject-thumbnail.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-aws"></i></div>
+        <div class="project-content">
+          <h4>Microservices Deployment Project</h4>
+          <p>A scalable, cloud-native e-commerce platform replicating the Google Store experience. Deployed on AWS EKS using a complete DevSecOps pipeline with GitOps principles.</p>
+          <div class="meta"><span>AWS • Kubernetes • Docker • Github Action • ArgoCD • Grafana • Devops</span></div>
+          <div class="links">
+             <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Google-store-Project.git" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
+             <a class="btn btn-chip" href="https://www.linkedin.com/in/anirudh-trivedi-4414b9244/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                <a class="btn btn-chip" href="https://medium.com/@anirudhtrivedi3014" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i><span>Blog</span></a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Project 4 -->
       <article class="card project-card reveal" data-category="aws serverless">
         <img src="assets/images/random-q-g.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-aws"></i></div>
@@ -324,7 +372,7 @@
         </div>
       </article>
 
-      <!-- Project 2 -->
+      <!-- Project 5 -->
       <article class="card project-card reveal" data-category="aws devops">
         <img src="assets/images/serverless.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="project-thumb-placeholder" style="display:none"><i class="fa-solid fa-server"></i></div>
@@ -340,14 +388,14 @@
         </div>
       </article>
 
-      <!-- Project 3 -->
+      <!-- Project 6 -->
       <article class="card project-card reveal" data-category="gcp python docker">
         <img src="assets/images/cloud-native.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="project-thumb-placeholder" style="display:none"><i class="fa-brands fa-docker"></i></div>
         <div class="project-content">
           <h4>Cloud Native Performance ML</h4>
           <p>ML prediction model containerized with Docker and deployed via GCP Cloud Run.</p>
-          <div class="meta"><span>GCP • Docker • Kubernetes</span></div>
+          <div class="meta"><span>GCP • Docker • Kubernetes • Devops</span></div>
           <div class="links">
              <a class="btn btn-chip" href="https://github.com/Ace12Anirudh/Cloud-Native-SPP" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
              <a class="btn btn-chip" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
@@ -356,7 +404,7 @@
         </div>
       </article>
 
-       <!-- Project 4 -->
+       <!-- Project 7 -->
       <article class="card project-card reveal" data-category="python">
         <img src="assets/images/chatbot.png" class="project-thumb" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
         <div class="project-content">
@@ -381,11 +429,37 @@
     <div class="walkthrough-grid">
       
       <!-- Video Card 1 -->
+       <div class="card video-card reveal">
+        <div class="video-thumb-container">
+          <!-- Link to Loom/YouTube or use an image -->
+          <img src="assets/images/mern-deploy-thumbnail.png" alt="Context Engine Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
+          <a href="https://drive.google.com/file/d/1D5dio3OGbl1CRGfGAQtTBWevr8S6k0RZ/view?usp=sharing" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
+        </div>
+        <div class="video-details">
+          <h4>Automated Full Stack MERN Application DevSecOps Deployment</h4>
+          <p class="section-sub">Full Stack MERN application DevSecOps Deployment</p>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+       <div class="card video-card reveal">
+        <div class="video-thumb-container">
+          <!-- Link to Loom/YouTube or use an image -->
+          <img src="assets/images/googleproject-thumbnail.png" alt="Context Engine Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
+          <a href="https://drive.google.com/file/d/1k_RDfrIGPMhVNENQNejR8mn8NhDZ-_Ch/view?usp=sharing" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
+        </div>
+        <div class="video-details">
+          <h4>Microservice Deployment Project</h4>
+          <p class="section-sub">A Microservice EKS Deployment</p>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
       <div class="card video-card reveal">
         <div class="video-thumb-container">
           <!-- Link to Loom/YouTube or use an image -->
           <img src="assets/images/random quote.jpg" alt="Context Engine Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
-          <a href="https://drive.google.com/file/d/1yhFei5JuEICvNKJaxUI2BwSPV9JEHqLV/view?usp=drive_link" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
+          <a href="https://drive.google.com/file/d/1yhFei5JuEICvNKJaxUI2BwSPV9JEHqLV/view?usp=sharing" class="play-button" aria-label="Play Video"><i class="fa-solid fa-play"></i></a>
         </div>
         <div class="video-details">
           <h4>Random_quote_generator-powered-by-AWS</h4>
@@ -393,7 +467,7 @@
         </div>
       </div>
 
-      <!-- Video Card 2 -->
+      <!-- Video Card 4 -->
       <div class="card video-card reveal">
         <div class="video-thumb-container">
           <img src="assets/images/cloudfront-s3-lambda.png" alt="Automation Framework Demo" onerror="this.src='https://via.placeholder.com/600x340/101525/3ec7e0?text=Video+Thumbnail'">
@@ -422,8 +496,13 @@
               <li title="Docker"><i class="fa-brands fa-docker"></i><span>Docker</span></li>
               <li title="Kubernetes"><i class="fa-solid fa-cubes"></i><span>Kubernetes</span></li>
               <li title="Terraform"><i class="fa-solid fa-code-branch"></i><span>Terraform</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>OpenTofu</span></li>
               <li title="Jenkins"><i class="fa-solid fa-gears"></i><span>Jenkins</span></li>
-              <li title="GitHub"><i class="fa-brands fa-github"></i><span>GitHub</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>GitHub Actions</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>Ansible</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>SonarQube</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>ArgoCD</span></li>
+              <li title="GitHub"><i class="fa-brands fa-github"></i><span>Gitlab CI</span></li>
               <li title="Linux"><i class="fa-brands fa-linux"></i><span>Linux</span></li>
               <li title="Python"><i class="fa-brands fa-python"></i><span>Python</span></li>
               <li title="SQL"><i class="fa-solid fa-database"></i><span>SQL</span></li>
@@ -436,41 +515,54 @@
       <!-- Certifications -->
       <section id="certs" class="section certs">
         <div class="container">
-          <h3 class="section-title reveal">Certifications</h3>
+          <h3 class="section-title reveal">Certifications & Badges</h3>
           <div class="panel">
-          <div class="cards">
-            <article class="card clickable reveal" data-link="assets/oracle devops certificate.pdf">
-              <h4>Oracle Cloud infrastructure Devop Professional</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/Oci genai certificate.pdf">
-              <h4>Oracle Cloud infrastructure Generative AI Professional</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/Coursera NA2UE7828I9K.pdf">
-              <h4>Google Data Analytics Professional Certificate</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/Certificate Ai skills passport.pdf">
-              <h4>AI Skill Passport</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/azure fundamentals.pdf">
-              <h4>Microsoft Azure Fundamentals</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/cognitive class , machine learning with python.pdf">
-              <h4>Machine Learning with Python</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/Coursera XZ9W6W44TXAP linux.pdf">
-              <h4>Linux for Devops (Coursera)</h4>
-              <p>Click to view certificate</p>
-            </article>
-            <article class="card clickable reveal" data-link="assets/Coursera CAMRNDU7TVA4 python.pdf">
-              <h4>Python (Dec 2022)</h4>
-              <p>Click to view certificate</p>
-            </article>
+          
+            <hr style="border-color: rgba(255,255,255,0.05); margin-bottom: 30px;">
+          <div class="badge-grid">
+            <article class="card badge-card clickable reveal" data-link="assets/AWS Certified Cloud Practitioner certificate.pdf">
+                <img src="assets/images/aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=AWS'">
+                <h4>AWS Certified Cloud Practitioner</h4>
+              </article>
+            <article class="card badge-card clickable reveal" data-link="assets/oracle devops certificate.pdf">
+                <img src="assets/images/ocidevops badge.png" alt="Oracle Cloud Infrastructure DevOps Professional" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Oracle+DevOps'">
+                <h4>Oracle Cloud infrastructure Devop Professional</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/Oci genai certificate.pdf">
+                <img src="assets/images/ocigenai badge.png" alt="Oracle Cloud Infrastructure Generative AI Professional" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Oracle+GenAI'">
+                <h4>Oracle Cloud infrastructure Generative AI Professional</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/Coursera NA2UE7828I9K.pdf">
+                <img src="assets/images/google data analytics badge.png" alt="Google Data Analytics Professional Certificate" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Google+Data'">
+                <h4>Google Data Analytics Professional Certificate</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/Certificate Ai skills passport.pdf">
+                <img src="assets/images/Certificate Ai skills passport_page-0001.jpg" alt="AI Skill Passport" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=AI+Passport'">
+                <h4>AI Skill Passport</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/azure fundamentals.pdf">
+                <img src="assets/images/azure fundamentals_page-0001.jpg" alt="Microsoft Azure Fundamentals" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Azure'">
+                <h4>Microsoft Azure Fundamentals</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/cognitive class , machine learning with python.pdf">
+                <img src="assets/images/ml wiht python - ibm.png" alt="Machine Learning with Python" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=ML+Python'">
+                <h4>Machine Learning with Python</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/Coursera XZ9W6W44TXAP linux.pdf">
+                <img src="assets/images/Coursera XZ9W6W44TXAP linux_page-0001.jpg" alt="Linux for Devops" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Linux'">
+                <h4>Linux for Devops (Coursera)</h4>
+              </article>
+
+              <article class="card badge-card clickable reveal" data-link="assets/Coursera CAMRNDU7TVA4 python.pdf">
+                <img src="assets/images/Coursera CAMRNDU7TVA4 python_page-0001.jpg" alt="Python" class="badge-img" onerror="this.src='https://via.placeholder.com/120x120/101525/3ec7e0?text=Python'">
+                <h4>Python (Dec 2022)</h4>
+              </article>
           </div></div>
         </div>
       </section>
@@ -558,7 +650,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>© 2025 Anirudh Trivedi 💙 </p>
+        <p>© 2026 Anirudh Trivedi 💙 </p>
       </div>
     </footer>
 
